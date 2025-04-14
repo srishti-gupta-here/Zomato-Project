@@ -237,13 +237,13 @@ WHERE item_rank = 1;
 SELECT 
     r.city,
     CASE 
-        WHEN EXTRACT(DOW FROM o.order_date) = 1 THEN 'Monday'
-        WHEN EXTRACT(DOW FROM o.order_date) = 2 THEN 'Tuesday'
-        WHEN EXTRACT(DOW FROM o.order_date) = 3 THEN 'Wednesday'
-        WHEN EXTRACT(DOW FROM o.order_date) = 4 THEN 'Thursday'
-        WHEN EXTRACT(DOW FROM o.order_date) = 5 THEN 'Friday'
-        WHEN EXTRACT(DOW FROM o.order_date) = 6 THEN 'Saturday'
-        ELSE 'Sunday'
+        WHEN EXTRACT(DOW FROM o.order_date) = 1 THEN 'Sunday'
+        WHEN EXTRACT(DOW FROM o.order_date) = 2 THEN 'Monday'
+        WHEN EXTRACT(DOW FROM o.order_date) = 3 THEN 'Tuesday'
+        WHEN EXTRACT(DOW FROM o.order_date) = 4 THEN 'Wednesday'
+        WHEN EXTRACT(DOW FROM o.order_date) = 5 THEN 'Thursday'
+        WHEN EXTRACT(DOW FROM o.order_date) = 6 THEN 'Friday'
+        ELSE 'Saturday'
     END AS day_of_week,
     SUM(o.sales_amount) AS total_sales
 FROM orders o
